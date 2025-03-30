@@ -1,0 +1,95 @@
+#You are trying to get to Los Angeles from San Jose. You have a limited amount of battery for your phone and gas for your car
+
+import random
+#declare variables
+gas=12
+distanceleft=400
+time=500
+batterylife=100
+boredom_level=0
+gamestate= True
+
+def decreasetime(inta,intb):
+    global time, boredom_level
+    #given two numbers, randomly return a number in between them.
+    random_num=random.randint(inta,intb)
+    #also, increase boredom_level by one if number is 30 or greater.
+    time-=random_num
+    if random_num>=30:
+        boredom_level=boredom_level+1
+pass
+
+def drive():
+    global distanceleft, gas, batterylife
+    #randomly decrease time by 30,45 minutes
+    decreasetime(30,45)
+    #randomly decrease distanceleft between 50,70 miles
+    distanceleft=distanceleft-random.randint(50,70)
+    #randomly decrease gas by 2,5 gallons.
+    gas=gas-2.5
+    #randomly decrease batterylife by 20,30%
+    batterylife=batterylife-random.randint(20,30)
+pass
+
+def charge():
+    global batterylife
+    #randomly decrease time by 30,45 minutes
+    decreasetime(30,45)
+    #randomly increase batterylife by 30,40%
+    batterylife=batterylife+random.randint(30,40)
+pass
+
+def use_phone():
+    global boredom_level, batterylife
+    #randomly decrease time by 30,45 minutes
+    decreasetime(30,45)
+    #decrease boredom level by 3 levels (can't go below 0).
+    if boredom_level>=3:
+        boredom_level=boredom_level-3
+    #randomly decrease batterylife by 10,20%
+    batterylife=batterylife-random.randint(10,20) 
+pass
+
+def refuel():
+    global gas
+    #set gas to 12 gallons
+    gas=12
+    #randomly decrease time by 10-20 minutes.
+    decreasetime(10,20)
+pass
+
+while gamestate==True:
+    #display all the necessary information
+    print("You are stuck on a family vacation to LA!")
+    print("Your gas is at: "+str(gas)+"gallos")
+    print("The distance left is: "+str(distanceleft))
+    print("The time left is: "+str(time)+"minutes")
+    print("Your battery life is: "+str(batterylife)+"%")
+    print("Your boredom level is: "+str(boredom_level))
+    #ask the user for an action.
+    action=input("Would you like to drive, charge, use phone, refuel, or quit?")
+    
+    if action=="drive":
+        drive()
+    elif action=="charge":
+        charge()
+    elif action=="use phone":
+        use_phone()
+    elif action=="refuel":
+        refuel()
+    elif action=="quit":
+        print ("game over")
+        gamestate=False
+    else: 
+        print("invalid imput")
+        
+    if boredom_level==5:
+        print("game over")
+        gamestate=False
+        
+    #check to see if the user wins or loses
+    if distanceleft==0 + boredom_level<5 + timeleft>=0:
+        print("You Win!")
+
+    
+
