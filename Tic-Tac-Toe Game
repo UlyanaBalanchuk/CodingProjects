@@ -1,0 +1,82 @@
+import random
+
+line1=[1,2,3,4,5,6,7,8,9]
+
+def pboard(lista):
+    print(lista[0:3])
+    print(lista[3:6])
+    print(lista[6:9])
+pboard(line1) 
+player1=input("What is the player 1's name?")
+game_mode=input("Would you like to play against another player or an AI?")
+if game_mode== "player":
+    player2=input("What is the player 2's name?")
+else: 
+    player2="AI"
+turn=1
+
+# function to check for a win
+def check_win(board,player):
+    win_conditions=[
+        [0,1,2], [3,4,5], [6,7,8], #rows 
+        [0,3,6], [1,4,7], [2,5,8], #columns
+        [0,4,8], [2,4,6]    #diagonals 
+    ]
+    for condition in win_conditions: 
+        if all(board[i] == player for i in condition):
+            return True 
+    return False 
+
+#to check for ties 
+def check_tie(board):
+    return all(spot in ('X', 'O') for spot in board)
+    
+# to update the board 
+def update(board, position, player):
+    if board[position-1] in ('X','O'):
+        return False #spot taken
+    board[position-1]=player
+    return True
+    
+# function for ai move
+def ai_move(board): 
+    available_moves=[pos for pos in board if isinstance(pos,int)]
+    if not available_moves:
+        return None
+    return random.choice(available_moves)
+    
+# the actual game loop 
+def play():
+    board = line1
+    players={'X': player1, 'O': player2}
+    turn_symbol='X'
+    
+    while True: 
+        turn_symbol='O' if turn_symbol=='X' else 'X' #switch turns 
+
+        if players[turn_symbol] == "AI":
+            move = ai_move(board)
+            if move is None:  # AI has no valid moves left
+                print("No moves left for AI. Ending game.")
+                break
+            
+            print("AI chooses position", move)
+            update(board, move, turn_symbol)  # AI move is placed on board
+
+        else: 
+            move=int(input(players[turn_symbol]+ " (" + turn_symbol + "), pick a spot (1-9): "))
+            if move<1 or move>9: 
+                print("Invalid  move")
+                continue
+            if not update(board, move, turn_symbol):
+                print("that spot is taken")
+                continue 
+            pboard(board)
+            if check_win(board, turn_symbol):
+                print(players[turn_symbol] + "wins!")
+                break 
+            if check_tie(board):
+                print("It's a tie!")
+                break
+                
+play()
