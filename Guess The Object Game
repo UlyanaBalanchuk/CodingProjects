@@ -1,0 +1,233 @@
+import random
+
+sealifedictionary={"starfish":["red","small","carnivore", "water-breathing"], "shark":["grey", "large", "carnivore", "water-breathing"], "octopus":["red","medium","carnivore", "water-breathing"], "crab":["red","small","omnivore", "water-breathing"], "whale":["grey","large","carnivore", "air-breathing"]}
+sealifelist=["starfish", "shark", "octopus", "crab", "whale"]
+
+fooddictionary={"orange":["citrus","sweet","medium"], "eggplant":["vegetable", "savory","large"], "lime":["citrus", "sour", "small"], "tomato":["vegetable","savory", "medium"], "banana":["fruit", "sweet", "medium"]}
+foodlist=["orange","eggplant","lime","tomato", "banana"]
+
+petdictionary={"dog":["brown","carnivore","medium","house pet"], "horse":["brown","omnivore","large","outside pet"], "pig":["pink","omnivore","medium","outside pet"], "turtle":["green","omnivore","small","house pet"], "ostrich":["black","omnivore","large","outside pet"]}
+petlist=["dog","horse","pig","turtle","ostrich"]
+
+# sealife function 
+def mode1(): 
+    chosenanimal=random.choice(sealifelist)
+    
+    print("These are the sea animals: ")
+    print(sealifedictionary) 
+    
+    choice1=input("Pick an attribute: color, size, diet, breathing")
+    if choice1=="color":
+        choice2=input("What color: red or grey")
+        if sealifedictionary[chosenanimal][0]==choice2:
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice1=="size":
+        choice2=input("What size: small, medium, or large")
+        if sealifedictionary[chosenanimal][1]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice1=="diet":
+        choice2=input("What diet: omnivore or carnivore")
+        if sealifedictionary[chosenanimal][2]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice1=="breathing":
+        choice2=input("water-breathing or air-breathing")
+        if sealifedictionary[chosenanimal][3]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+            
+    choice2=input("Pick an attribute: color, size, diet, breathing")
+    if choice2=="color":
+        choice3=input("What color: red or grey")
+        if sealifedictionary[chosenanimal][0]==choice2:
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice2=="size":
+        choice3=input("What size: small, medium, or large")
+        if sealifedictionary[chosenanimal][1]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice2=="diet":
+        choice3=input("What diet: omnivore or carnivore")
+        if sealifedictionary[chosenanimal][2]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice2=="breathing":
+        choice3=input("water-breathing or air-breathing")
+        if sealifedictionary[chosenanimal][3]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+            
+    guess=input("What is your guess: starfish, shark, octopus, crab, whale")
+    if guess==chosenanimal:
+        print("correct!")
+    else: 
+        print("wrong, correct guess: "+chosenanimal)
+    pass 
+
+
+# food function 
+def mode2(): 
+    chosenfood=random.choice(foodlist)
+    
+    print("These are the foods: ")
+    print(fooddictionary) 
+    
+    choice1=input("Pick an attribute: food group, taste, size")
+    if choice1=="food group":
+        choice2=input("What group: citrus, fruit, or vegetable?")
+        if fooddictionary[chosenfood][0]==choice2:
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice1=="taste":
+        choice2=input("What taste: sweet, sour, or savory?")
+        if fooddictionary[chosenfood][1]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice1=="size":
+        choice2=input("What size: small, medium, or large?")
+        if fooddictionary[chosenfood][2]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+            
+    choice2=input("Pick an attribute: food group, taste, size")
+    if choice2=="food group":
+        choice3=input("What group: citrus, fruit, or vegetable?")
+        if fooddictionary[chosenfood][0]==choice2:
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice2=="taste":
+        choice3=input("What taste: sweet, sour, or savory?")
+        if fooddictionary[chosenfood][1]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice2=="size":
+        choice3=input("What size: small, medium, or large?")
+        if fooddictionary[chosenfood][2]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    guess=input("What is your guess: orange, eggplant, lime, tomato, banana")
+    if guess==chosenfood:
+        print("correct!")
+    else: 
+        print("wrong, correct guess: "+chosenfood)
+    pass 
+
+
+# pets function 
+def mode3(): 
+    chosenpet=random.choice(petlist)
+    
+    print("These are the pets: ")
+    print(petdictionary) 
+    
+    choice1=input("Pick an attribute: color, diet, size, house or outside")
+    if choice1=="color":
+        choice2=input("What group: brown, pink, green, or black?")
+        if petdictionary[chosenpet][0]==choice2:
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice1=="diet":
+        choice2=input("What diet: omnivore or carnivore")
+        if petdictionary[chosenpet][1]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice1=="size":
+        choice2=input("What size: small, medium, or large?")
+        if petdictionary[chosenpet][2]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice1=="house or outside":
+        choice2=input("Inside or Outside?")
+        if petdictionary[chosenpet][3]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    
+    choice2=input("Pick an attribute: color, diet, size, house or outside")
+    if choice2=="color":
+        choice3=input("What group: brown, pink, green, or black?")
+        if petdictionary[chosenpet][0]==choice2:
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice2=="diet":
+        choice3=input("What diet: omnivore or carnivore")
+        if petdictionary[chosenpet][1]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice2=="size":
+        choice3=input("What size: small, medium, or large?")
+        if petdictionary[chosenpet][2]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    if choice2=="house or outside":
+        choice3=input("Inside or Outside?")
+        if petdictionary[chosenpet][3]==choice2: 
+            print("correct")
+        else: 
+            print("incorrect")
+    
+    guess=input("What is your guess: dog, horse, pig, turtle, ostrich")
+    if guess==chosenpet:
+        print("correct!")
+    else: 
+        print("wrong, correct guess:" +chosenpet)
+    pass 
+
+# user mode 
+def createusermode():
+    userdictionary={}
+    usercategory=input("What is the Name of your category?")
+    #ask user fr a key
+    for i in range(5):
+        key1=input("provide an object for the category?")
+        userlist=[]
+        for i in userlist:
+            attributeskey1=input("what is an attribute for this item?")
+            userlist.append(attributeskey1)
+        # add it into the dictinary as userdictionary[key]=[value]
+        userdictionary[key1]=userlist
+
+gamestate= True
+while gamestate==True: 
+    usermode=input("Would you like to play a pre-made mode or a user mode?")
+    if usermode=="user mode": 
+        createusermode()
+    else:
+        modechoice=input("Which mode do you want to play?: sea life, food, or pets")
+        if modechoice=="sea life":
+            mode1()
+        elif modechoice=="food":
+            mode2()
+        else:
+            mode3()
+        
+        finalchoice=input("Do you want to play again? Yes or no?")
+        if finalchoice=="yes":
+            gamestate=True
+        else: 
+            gamestate=False
+        
+
