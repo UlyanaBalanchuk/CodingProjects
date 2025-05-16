@@ -1,0 +1,79 @@
+import turtle
+turtle.screensize(2000,1000)
+
+def box(x,y,color):
+    turtle.penup()
+    turn=0
+    turtle.goto(x,y)
+    turtle.pendown()
+    turtle.begin_fill()
+    while turn<2:
+        turtle.color(color)
+        turtle.forward(10)
+        turtle.left(90)
+        turtle.forward(10)
+        turtle.left(90)
+        turn+=1
+    turtle.end_fill()
+turtle.tracer(0)
+
+w="white"
+p="purple"
+r="red"
+y="yellow"
+o="orange"
+b="blue"
+g="green"
+db="blue"
+b="black"
+lb="blue"
+
+
+r1=[[w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w],
+    [w,w,w,w,w,w,w,w,p,r,r,o,y,w,w,w,w,w,w,w,w,w,w],
+    [w,w,w,w,w,r,r,r,o,o,y,r,r,r,w,w,w,w,w,w,w,w,w],
+    [w,w,w,w,w,r,r,r,o,o,y,p,p,p,w,w,w,w,w,w,w,w,w],
+    [w,w,w,w,r,r,r,o,lb,b,w,p,b,lb,w,w,w,w,w,w,w,w],
+    [w,w,w,w,r,o,o,w,w,w,w,b,db,lb,g,w,w,w,w,w,w,w],
+    [w,w,w,p,r,o,y,w,w,w,b,b,b,b,db,w,w,w,w,w,w,w,w],
+    [w,w,w,p,r,o,o,y,w,w,b,b,b,b,b,w,w,w,w,w,w,w,w],
+    [w,w,p,p,r,o,o,o,o,o,b,b,b,b,b,w,w,w,w,w,w,w,w],
+    [w,w,p,p,r,r,r,o,o,o,p,p,w,w,w,w,w,w,w,w,w,w,w],
+    [w,w,p,p,r,r,r,y,y,y,p,p,p,w,w,w,w,w,w,w,w,w,w],
+    [w,w,b,b,r,o,o,o,r,r,o,o,p,p,p,w,w,w,w,w,w,w,w],
+    [w,p,b,b,r,r,r,o,r,r,p,o,y,o,r,y,w,w,w,w,w,w,w],
+    [w,b,b,b,p,r,r,r,p,b,g,o,y,y,r,o,w,w,w,w,w,w,w],
+    [w,b,b,b,p,r,r,r,p,b,g,o,y,y,y,o,w,w,w,w,w,w,w],
+    [w,r,b,b,p,p,r,p,p,b,g,r,o,o,y,r,o,w,w,w,w,w,w],
+    [w,b,b,p,p,p,p,p,db,lb,g,p,r,o,y,y,w,w,w,w,w,w],
+    [w,w,b,b,p,p,p,p,p,db,db,lb,b,g,g,y,g,o,w,w,w,w],
+    [w,w,b,b,b,p,p,p,p,p,b,lb,lb,g,g,g,g,g,o,w,w,w],
+    [w,w,w,b,b,p,p,p,p,p,b,lb,lb,b,g,g,lb,o,w,w,w,w],
+    [w,w,w,w,b,db,db,db,db,p,p,db,db,db,g,db,lb,g,y,w,w,w,w],
+    [w,w,w,w,w,p,p,p,p,p,p,r,db,db,db,db,lb,g,g,w,w,w,w],
+    [w,w,w,w,w,p,p,b,b,b,b,b,r,db,db,db,db,db,g,g],
+    [w,w,w,w,b,b,b,b,b,b,p,o,p,p,b,db,db,db,g,w,w,w,w,],
+    [w,w,w,w,b,w,b,w,w,w,w,b,b,b,b,b,db,db,db,g,w,w,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,b,b,b,b,b,db,db,g,w,w,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,b,b,b,b,db,db,db,w,w,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,b,b,db,db,p,db,db,g,g,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,b,b,lb,lb,r,r,db,db,g,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,b,p,lb,lb,r,r,w,w,db,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,p,p,lb,lb,r,o,w,w,w,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,p,r,lb,lb,r,o,w,w,w,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,p,r,lb,lb,r,o,w,w,w,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,w,r,db,lb,r,o,w,w,w,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,w,r,db,db,r,o,w,w,w,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,w,r,db,db,r,o,w,w,w,w],
+    [w,w,w,w,w,w,w,w,w,w,w,w,w,w,r,db,db,r,o,w,w,w,w]]
+vertical=0
+rows=0
+print("hi")
+for z in r1:
+    x=0
+    for a in r1[rows]:
+        box(-350+x,250-vertical,a)
+        x+=10
+    vertical+=10
+    rows+=1
+turtle.done()
